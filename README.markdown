@@ -3,6 +3,8 @@ PUGXI18nBundle
 
 The branch master is developed upon Symfony 2.1
 
+[![Build Status](https://secure.travis-ci.org/PUGX/PUGXI18nBundle.png?branch=master)](http://travis-ci.org/PUGX/PUGXI18nBundle)
+
 Documentation
 -------------
 
