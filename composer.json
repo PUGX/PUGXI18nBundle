@@ -2,7 +2,7 @@
     "name": "pugx/i18n-bundle",
     "type": "symfony-bundle",
     "description": "Manage i18n",
-    "keywords": ["symfony2, i18n"],
+    "keywords": ["symfony2, i18n, translation"],
     "license": "MIT",
     "authors": [
         {
