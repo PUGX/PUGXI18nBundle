@@ -64,7 +64,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 class Article
 {    
     /**
-     * @ORM\OneToMany(targetEntity="ArtcileI18n", mappedBy="translatable", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="ArticleI18n", mappedBy="translatable", cascade={"persist"})
      * )
      */
     protected $translations;

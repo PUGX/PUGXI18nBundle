@@ -36,20 +36,16 @@ class TranslatableTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetTranslation($translations, $defaultLocale, $locale, $translationExpected)
     {
-        $translationsObject = array();
-        foreach ($translations as $language => $translation) {
-            $translationsObject[$language] = $this->$translation;
-        }
-                
-        $this->translatable = new Translatable($translationsObject);
+        $this->translatable = new Translatable();
         $this->translatable->setLocale($this->locale);
+        
+        foreach ($translations as $language => $translation) {
+            $this->$translation->expects($this->exactly(2))->method('getLocale')->will($this->returnValue($language));
+            $this->translatable->addTranslation($this->$translation);
+        }
         
         $this->locale->expects($this->exactly(1))->method('getDefaultLocale')->will($this->returnValue($defaultLocale));
         $this->locale->expects($this->exactly(1))->method('getLocale')->will($this->returnValue($locale));
-                        
-        foreach ($translationsObject as $language => $translation) {
-            $translation->expects($this->exactly(1))->method('getLocale')->will($this->returnValue($language));
-        }
                
         $result = $this->translatable->getTranslation();
         $this->assertEquals($this->$translationExpected, $result);
@@ -62,10 +58,11 @@ class TranslatableTest extends \PHPUnit_Framework_TestCase
     {
         $this->translatable = new Translatable(array($this->translationStubDe));
         $this->translatable->setLocale($this->locale);
+        $this->translationStubDe->expects($this->exactly(2))->method('getLocale')->will($this->returnValue('de'));
+        $this->translatable->addTranslation($this->translationStubDe);
         
         $this->locale->expects($this->exactly(1))->method('getDefaultLocale')->will($this->returnValue('en'));
         $this->locale->expects($this->exactly(1))->method('getLocale')->will($this->returnValue('it'));
-        $this->translationStubDe->expects($this->exactly(1))->method('getLocale')->will($this->returnValue('de'));
         
         $result = $this->translatable->getTranslation();
     }

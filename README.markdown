@@ -1,6 +1,13 @@
 PUGXI18nBundle
 =============
 
+PUGXI18nBundle is a simple way to manage the internationalization in Symfony2 as in symfony1 with a Entity (that implements TranslatableInterface) and EntityI18n (that implements TranslatingInterface) 
+via one-to-many association.
+In practice when you design the entity that implements TranslatableInterface, you can extend the class TranslatableWrapper or the class Translatable.
+The Translatable's function is retrieve the translation for the current locale. 
+The TranslatableWrapper's function is to wrap the methods of the related entity (TranslatingInterface) using a "magic call".
+If you want "kill the magic", you have to extend Translatable and implement these wrappers by yourself.
+
 The branch master is developed upon Symfony 2.1
 
 [![Build Status](https://secure.travis-ci.org/PUGX/PUGXI18nBundle.png?branch=master)](http://travis-ci.org/PUGX/PUGXI18nBundle)
