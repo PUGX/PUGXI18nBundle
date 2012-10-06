@@ -18,12 +18,12 @@ This branch is developed upon Symfony 2.1.*
 Documentation
 -------------
 
-[Read the Documentation](https://github.com/PUGX/PUGXI18nBundle/blob/master/Resources/doc/index.md)
+[Read the Documentation](https://github.com/PUGX/PUGXI18nBundle/blob/1.0/Resources/doc/index.md)
 
 Installation
 ------------
 
-All the installation instructions are located in [documentation](https://github.com/PUGX/PUGXI18nBundle/blob/master/Resources/doc/index.md).
+All the installation instructions are located in [documentation](https://github.com/PUGX/PUGXI18nBundle/blob/1.0/Resources/doc/index.md).
 
 License
 -------
