@@ -12,7 +12,7 @@ The TranslatableWrapper's function is to wrap the methods of the related entity 
 If you want "kill the magic", you have to extend Translatable and implement these wrappers by yourself.
 
 The master branch is in sync with Symfony master branch
-The branch 2.1 is developed upon Symfony 2.1
+The branch 1.* is developed upon Symfony 2.1
 
 [![Build Status](https://secure.travis-ci.org/PUGX/PUGXI18nBundle.png?branch=master)](http://travis-ci.org/PUGX/PUGXI18nBundle)
 
