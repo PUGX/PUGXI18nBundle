@@ -13,7 +13,7 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
-        "symfony/framework-bundle": "dev-master",
+        "symfony/framework-bundle": "2.1.*",
         "doctrine/orm": ">=2.2,<2.4-dev",
         "symfony/yaml": "2.1.*"
     },
