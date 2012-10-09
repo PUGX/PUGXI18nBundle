@@ -22,9 +22,6 @@
         "doctrine/orm": ">=2.2,<2.4-dev",
         "symfony/yaml": "2.1.*"
     },
-    "require-dev": {
-        "symfony/yaml": "2.1.*"
-    },
 
     "autoload": {
         "psr-0": { "PUGX\\I18nBundle": "" }
