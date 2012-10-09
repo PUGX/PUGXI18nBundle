@@ -11,7 +11,7 @@ The Translatable's function is retrieve the translation for the current locale.
 The TranslatableWrapper's function is to wrap the methods of the related entity (TranslatingInterface) using a "magic call".
 If you want "kill the magic", you have to extend Translatable and implement these wrappers by yourself.
 
-This branch is developed upon Symfony 2.1.*
+This branch is developed upon Symfony 2.1
 
 [![Build Status](https://secure.travis-ci.org/PUGX/PUGXI18nBundle.png?branch=1.0)](http://travis-ci.org/PUGX/PUGXI18nBundle)
 
