@@ -16,6 +16,10 @@ The branch 1.0 is developed upon Symfony 2.1
 
 [![Build Status](https://secure.travis-ci.org/PUGX/PUGXI18nBundle.png?branch=master)](http://travis-ci.org/PUGX/PUGXI18nBundle)
 
+[![Total Downloads](https://poser.pugx.org/PUGX/i18n-bundle/downloads.png)](https://packagist.org/packages/PUGX/i18n-bundle)
+[![Latest Stable Version](https://poser.pugx.org/PUGX/i18n-bundle/v/stable.png)](https://packagist.org/packages/PUGX/i18n-bundle)
+[![Latest Stable Version](https://poser.pugx.org/PUGX/i18n-bundle/v/unstable.png)](https://packagist.org/packages/PUGX/i18n-bundle)
+
 Documentation
 -------------
 
