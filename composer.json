@@ -19,8 +19,10 @@
     "require": {
         "php": ">=5.3.3",
         "symfony/framework-bundle": "dev-master",
-        "doctrine/orm": ">=2.2,<2.4-dev",
-        "symfony/yaml": "2.1.*"
+        "doctrine/orm": ">=2.2,<2.4-dev"
+    },
+    "require-dev": {
+        "symfony/yaml": "dev-master"
     },
 
     "autoload": {
