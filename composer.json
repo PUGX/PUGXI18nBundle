@@ -19,9 +19,12 @@
     "require": {
         "php": ">=5.3.3",
         "symfony/framework-bundle": "2.1.*",
-        "doctrine/orm": ">=2.2,<2.4-dev",
+        "doctrine/orm": ">=2.2,<2.4-dev"
+    },
+    "require-dev": {
         "symfony/yaml": "2.1.*"
     },
+
 
     "autoload": {
         "psr-0": { "PUGX\\I18nBundle": "" }
