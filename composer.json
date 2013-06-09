@@ -18,11 +18,11 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
-        "symfony/framework-bundle": "dev-master",
+        "symfony/framework-bundle": "2.2.*",
         "doctrine/orm": ">=2.2,<2.4-dev"
     },
     "require-dev": {
-        "symfony/yaml": "dev-master"
+        "symfony/yaml": "2.2.*"
     },
 
     "autoload": {
