@@ -1,14 +1,17 @@
+--- 
+php: 
+- 5.3
+- 5.4
+notifications: 
+  email: 
+  - leonardo.proietti@gmail.com
+before_script: 
+- curl -s http://getcomposer.org/installer | php
+- php composer.phar install --dev
+env: 
+  matrix: 
+    secure: |-
+      OcBJDA8S2ZrCForyUPjiR1vcqDS6K/L/fNqDQVeAsJ+GUk4hXAHE7ui8TCX9
+      HX3CWAxHLjZKQLStjNyKymPRPPTrKp9tVtgkU1EinsaEBn3L2KKZ2N684pRw
+      sux0cqKmThtwULlspaVmAVzR/jKQM/xqW0neogE3q8+OGx3KICA=
 language: php
-
-php:
-  - 5.3
-  - 5.4
-
-before_script:
-    - curl -s http://getcomposer.org/installer | php
-    - php composer.phar install --dev
-
-notifications:
-  email:
-    - leonardo.proietti@gmail.com
-

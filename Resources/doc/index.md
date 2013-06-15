@@ -3,7 +3,7 @@ PUGXI18nBundle Documentation
 
 ## Prerequisites
 
-This version of the bundle requires Symfony 2.1
+This version of the bundle is in sync with Symfony master branch
 
 ## Installation
 
