@@ -85,7 +85,7 @@ namespace Acme\MyBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
-class ArtcileI18n
+class ArticleI18n
 {    
     /**
      * 
