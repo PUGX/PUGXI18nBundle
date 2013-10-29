@@ -69,7 +69,7 @@ class TranslatableTest extends \PHPUnit_Framework_TestCase
     public function testGetTranslationNotFoundIfExceptionInNotRequired()
     {
         $translatable = new Translatable(array($this->translationStubDe));
-        $translatable->setThrowExceptionIfTranslationNotFound(false);
+        $translatable->dontThrowException();
         $translatable->setLocale($this->locale);
         $this->translationStubDe->expects($this->exactly(2))->method('getLocale')->will($this->returnValue('de'));
         $translatable->addTranslation($this->translationStubDe);

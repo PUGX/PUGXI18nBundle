@@ -18,8 +18,6 @@ abstract class Translatable implements TranslatableInterface
      * @var \PUGX\I18nBundle\Locale\LocaleInterface
      */
     protected $locale = null;
-
-    protected $throwExceptionIfTranslationNotFound = true;
         
     /**
      *
@@ -47,6 +45,11 @@ abstract class Translatable implements TranslatableInterface
     public function addTranslation(TranslatingInterface $translation)
     {
         $this->translations[$translation->getLocale()] = $translation;
+    }
+
+    protected function getThrowExceptionIfNotFound()
+    {
+        return true;
     }
         
     /**
@@ -84,10 +87,10 @@ abstract class Translatable implements TranslatableInterface
             $this->setTranslation($defaultTranslation);
         }
         
-        if (is_null($this->translation) && $this->throwExceptionIfTranslationNotFound) {
+        if (is_null($this->translation) && $this->getThrowExceptionIfNotFound()) {
             throw new \RuntimeException('Translation not found');
         }
                 
         return $this->translation;
-    }    
+    }
 }
