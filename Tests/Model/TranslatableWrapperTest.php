@@ -2,7 +2,6 @@
 
 namespace PUGX\I18nBundle\Tests\Service;
 
-use PUGX\I18nBundle\Test\TestCase;
 use PUGX\I18nBundle\Tests\TranslatableWrapper;
 use PUGX\I18nBundle\Tests\TranslationEn;
 

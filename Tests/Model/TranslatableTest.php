@@ -2,7 +2,6 @@
 
 namespace PUGX\I18nBundle\Tests\Service;
 
-use PUGX\I18nBundle\Test\TestCase;
 use PUGX\I18nBundle\Tests\Translatable;
 
 class TranslatableTest extends \PHPUnit_Framework_TestCase
@@ -36,18 +35,18 @@ class TranslatableTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetTranslation($translations, $defaultLocale, $locale, $translationExpected)
     {
-        $this->translatable = new Translatable();
-        $this->translatable->setLocale($this->locale);
+        $translatable = new Translatable();
+        $translatable->setLocale($this->locale);
         
         foreach ($translations as $language => $translation) {
             $this->$translation->expects($this->exactly(2))->method('getLocale')->will($this->returnValue($language));
-            $this->translatable->addTranslation($this->$translation);
+            $translatable->addTranslation($this->$translation);
         }
         
         $this->locale->expects($this->exactly(1))->method('getDefaultLocale')->will($this->returnValue($defaultLocale));
         $this->locale->expects($this->exactly(1))->method('getLocale')->will($this->returnValue($locale));
                
-        $result = $this->translatable->getTranslation();
+        $result = $translatable->getTranslation();
         $this->assertEquals($this->$translationExpected, $result);
     }
     
@@ -56,14 +55,29 @@ class TranslatableTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetTranslationNotFound()
     {
-        $this->translatable = new Translatable(array($this->translationStubDe));
-        $this->translatable->setLocale($this->locale);
+        $translatable = new Translatable(array($this->translationStubDe));
+        $translatable->setLocale($this->locale);
         $this->translationStubDe->expects($this->exactly(2))->method('getLocale')->will($this->returnValue('de'));
-        $this->translatable->addTranslation($this->translationStubDe);
+        $translatable->addTranslation($this->translationStubDe);
         
         $this->locale->expects($this->exactly(1))->method('getDefaultLocale')->will($this->returnValue('en'));
         $this->locale->expects($this->exactly(1))->method('getLocale')->will($this->returnValue('it'));
         
-        $result = $this->translatable->getTranslation();
+        $translatable->getTranslation();
+    }
+
+    public function testGetTranslationNotFoundIfExceptionInNotRequired()
+    {
+        $translatable = new Translatable(array($this->translationStubDe));
+        $translatable->setThrowExceptionIfTranslationNotFound(false);
+        $translatable->setLocale($this->locale);
+        $this->translationStubDe->expects($this->exactly(2))->method('getLocale')->will($this->returnValue('de'));
+        $translatable->addTranslation($this->translationStubDe);
+
+        $this->locale->expects($this->exactly(1))->method('getDefaultLocale')->will($this->returnValue('en'));
+        $this->locale->expects($this->exactly(1))->method('getLocale')->will($this->returnValue('it'));
+
+        $result = $translatable->getTranslation();
+        $this->assertNull($result);
     }
 }

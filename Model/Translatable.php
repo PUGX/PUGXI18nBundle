@@ -9,15 +9,17 @@ abstract class Translatable implements TranslatableInterface
 {
     /**
      * current translation
-     * @var PUGX\I18nBundle\Model\TranslatingInterface 
+     * @var \PUGX\I18nBundle\Model\TranslatingInterface
      */
     protected $translation = null;
     
     /**
      *
-     * @var PUGX\I18nBundle\Locale\LocaleInterface
+     * @var \PUGX\I18nBundle\Locale\LocaleInterface
      */
     protected $locale = null;
+
+    protected $throwExceptionIfTranslationNotFound = true;
         
     /**
      *
@@ -82,7 +84,7 @@ abstract class Translatable implements TranslatableInterface
             $this->setTranslation($defaultTranslation);
         }
         
-        if (is_null($this->translation)) {
+        if (is_null($this->translation) && $this->throwExceptionIfTranslationNotFound) {
             throw new \RuntimeException('Translation not found');
         }
                 
