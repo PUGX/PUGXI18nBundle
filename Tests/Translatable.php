@@ -12,4 +12,9 @@ class Translatable extends BaseTranslatable
     {
         return $this->translations;
     }
+
+    public function setThrowExceptionIfTranslationNotFound($v)
+    {
+        $this->throwExceptionIfTranslationNotFound = $v;
+    }
 }

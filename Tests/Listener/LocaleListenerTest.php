@@ -2,7 +2,6 @@
 
 namespace PUGX\I18nBundle\Tests\Listener;
 
-use PUGX\I18nBundle\Test\TestCase;
 use PUGX\I18nBundle\Listener\LocaleListener;
 use PUGX\I18nBundle\Locale\Locale;
 
