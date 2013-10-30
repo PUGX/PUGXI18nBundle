@@ -47,7 +47,23 @@ abstract class Translatable implements TranslatableInterface
         $this->translations[$translation->getLocale()] = $translation;
     }
 
-    protected function getThrowExceptionIfNotFound()
+    protected function handleTranslationNotFound()
+    {
+        throw new \RuntimeException('Translation not found');
+    }
+
+    /**
+     * if you need a transaltion even in a translation in current language was not found, return true
+     */
+    protected function acceptFirstTransaltionAsDefault()
+    {
+        return false;
+    }
+
+    /**
+     * if you don't want that only translation in locale will be returned, return false
+     */
+    protected function acceptDefaultLocaleTransaltionAsDefault()
     {
         return true;
     }
@@ -70,13 +86,18 @@ abstract class Translatable implements TranslatableInterface
         $defaultLocale = $this->locale->getDefaultLocale();
         $locale        = $this->locale->getLocale();
         
-        foreach ($translations as $translation) { 
-            $translationLocale = $translation->getLocale();  
-            // translation by default locale that will be used
-            // if a translation by locale is not found
-            if ( $translationLocale == $defaultLocale ) {
+        foreach ($translations as $translation) {
+
+            if ($this->acceptFirstTransaltionAsDefault()) {
                 $defaultTranslation = $translation;
             }
+
+            $translationLocale = $translation->getLocale();
+
+            if ( $translationLocale == $defaultLocale && $this->acceptDefaultLocaleTransaltionAsDefault()) {
+                $defaultTranslation = $translation;
+            }
+
             if ( $translationLocale == $locale ) {
                 $this->setTranslation($translation);
                 break;
@@ -87,8 +108,8 @@ abstract class Translatable implements TranslatableInterface
             $this->setTranslation($defaultTranslation);
         }
         
-        if (is_null($this->translation) && $this->getThrowExceptionIfNotFound()) {
-            throw new \RuntimeException('Translation not found');
+        if (is_null($this->translation)) {
+            $this->handleTranslationNotFound();
         }
                 
         return $this->translation;

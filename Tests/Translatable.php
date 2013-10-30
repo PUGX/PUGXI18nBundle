@@ -5,22 +5,43 @@ namespace PUGX\I18nBundle\Tests;
 use PUGX\I18nBundle\Model\Translatable as BaseTranslatable;
 
 class Translatable extends BaseTranslatable
-{    
+{
+    const HANDLE_NOT_FOUND_EXCEPTION = 'exception';
+    const HANDLE_NOT_FOUND_NULL = 'null';
+    const HANDLE_NOT_FOUND_EMTPY_OBJECT = 'emptyObject';
+
     protected $translations;
-    protected $throwExceptionIfTranslationNotFound = true;
+    public $handleNotFound = self::HANDLE_NOT_FOUND_EXCEPTION;
 
     public function getTranslations()
     {
         return $this->translations;
     }
 
-    public function dontThrowException()
+    protected function handleTranslationNotFound()
     {
-        $this->throwExceptionIfTranslationNotFound = false;
+        $strategy = 'handle' .ucfirst($this->handleNotFound);
+        $this->$strategy();
     }
 
-    protected function getThrowExceptionIfNotFound()
+    private function handleException()
     {
-        return $this->throwExceptionIfTranslationNotFound;
+        parent::handleTranslationNotFound();
+    }
+
+    private function handleNull()
+    {
+        $this->translation = null;
+    }
+
+    private function handleEmptyObject()
+    {
+        $class = get_class($this);
+        $this->translation = new $class;
+    }
+
+    public function getDummyValue()
+    {
+
     }
 }
