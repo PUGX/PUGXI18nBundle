@@ -53,7 +53,7 @@ class TranslatableTest extends \PHPUnit_Framework_TestCase
     /**
      * @expectedException RuntimeException
      */
-    public function testGetTranslationNotFound()
+    public function testHandleNotFoundThrowsException()
     {
         $translatable = new Translatable(array($this->translationStubDe));
         $translatable->setLocale($this->locale);
@@ -66,10 +66,10 @@ class TranslatableTest extends \PHPUnit_Framework_TestCase
         $translatable->getTranslation();
     }
 
-    public function testGetTranslationNotFoundIfExceptionInNotRequired()
+    public function testHandleNotFoundReturnsNull()
     {
         $translatable = new Translatable(array($this->translationStubDe));
-        $translatable->dontThrowException();
+        $translatable->handleNotFound = $translatable::HANDLE_NOT_FOUND_NULL;
         $translatable->setLocale($this->locale);
         $this->translationStubDe->expects($this->exactly(2))->method('getLocale')->will($this->returnValue('de'));
         $translatable->addTranslation($this->translationStubDe);
@@ -79,5 +79,21 @@ class TranslatableTest extends \PHPUnit_Framework_TestCase
 
         $result = $translatable->getTranslation();
         $this->assertNull($result);
+    }
+
+    public function testHandleNotFoundReturnsEmptyObject()
+    {
+        $translatable = new Translatable(array($this->translationStubDe));
+        $translatable->handleNotFound = $translatable::HANDLE_NOT_FOUND_EMTPY_OBJECT;
+        $translatable->setLocale($this->locale);
+        $this->translationStubDe->expects($this->exactly(2))->method('getLocale')->will($this->returnValue('de'));
+        $translatable->addTranslation($this->translationStubDe);
+
+        $this->locale->expects($this->exactly(1))->method('getDefaultLocale')->will($this->returnValue('en'));
+        $this->locale->expects($this->exactly(1))->method('getLocale')->will($this->returnValue('it'));
+
+        $result = $translatable->getTranslation();
+        $this->assertInstanceOf('PUGX\I18nBundle\Tests\Translatable', $result);
+        $this->assertNull($result->getDummyValue());
     }
 }
