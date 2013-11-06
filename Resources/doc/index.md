@@ -12,6 +12,7 @@ This version of the bundle is in sync with Symfony master branch
 3. Entities
 4. Repository
 5. Form
+6. Customize the behaviour for default translation and translation not found
 
 ### 1. Download PUGXI18nBundle
 
@@ -227,3 +228,51 @@ class ArticleType extends AbstractType
 
 ```
 [Allowing "new" tags with the "prototype"] (http://symfony.com/doc/current/cookbook/form/form_collections.html#allowing-new-tags-with-the-prototype)
+
+
+### 6. Customize the behaviour for default translation and translation not found
+
+If you want use as default translation, the first found translation even if is not a translation for current locale neither for default locale
+
+
+ ``` php
+ protected function acceptFirstTransaltionAsDefault()
+ {
+     return true;
+ }
+ ```
+
+ If you want a translation, only if was found one for the current locale
+
+
+ ``` php
+ protected function acceptDefaultLocaleTransaltionAsDefault()
+ {
+     return false;
+ }
+ ```
+
+If you want manage by yourself the behaviour in case of translation not found
+
+ ``` php
+ protected function handleTranslationNotFound()
+ {
+     //your logic
+ }
+ ```
+
+ for example
+
+  ``` php
+ protected function handleTranslationNotFound()
+ {
+     $class = get_class($this) . 'Translation';
+     if (class_exists($class)) {
+         $this->translation = new $class;
+     } else {
+         $this->translation = null;
+     }
+ }
+ ```
+
+
