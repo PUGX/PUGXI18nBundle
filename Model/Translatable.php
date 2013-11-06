@@ -78,13 +78,9 @@ abstract class Translatable implements TranslatableInterface
             return $this->translation;
         }
         
-        $translations = $this->getTranslations(); 
-        if ( count($translations) < 1 ) {
-            return null;
-        }
-        
-        $defaultLocale = $this->locale->getDefaultLocale();
-        $locale        = $this->locale->getLocale();
+        $translations   = $this->getTranslations();
+        $defaultLocale  = $this->locale->getDefaultLocale();
+        $locale         = $this->locale->getLocale();
         
         foreach ($translations as $translation) {
 
