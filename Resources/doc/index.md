@@ -23,7 +23,7 @@ Add the following lines in your composer.json:
 ```
 {
     "require": {
-        "pugx/i18n-bundle": "dev-master"
+        "pugx/i18n-bundle": "3.0.*"
     }
 }
 

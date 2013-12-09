@@ -11,10 +11,9 @@ The Translatable's function is retrieve the translation for the current locale.
 The TranslatableWrapper's function is to wrap the methods of the related entity (TranslatingInterface) using a "magic call".
 If you want "kill the magic", you have to extend Translatable and implement these wrappers by yourself.
 
-The master branch is in sync with Symfony master branch
-The branch 1.0 is developed upon Symfony 2.1
+This branch requires Symfony 2.3
 
-[![Build Status](https://secure.travis-ci.org/PUGX/PUGXI18nBundle.png?branch=master)](http://travis-ci.org/PUGX/PUGXI18nBundle)
+[![Build Status](https://secure.travis-ci.org/PUGX/PUGXI18nBundle.png?branch=3.0)](http://travis-ci.org/PUGX/PUGXI18nBundle)
 
 [![Total Downloads](https://poser.pugx.org/PUGX/i18n-bundle/downloads.png)](https://packagist.org/packages/PUGX/i18n-bundle)
 [![Latest Stable Version](https://poser.pugx.org/PUGX/i18n-bundle/v/stable.png)](https://packagist.org/packages/PUGX/i18n-bundle)
@@ -23,12 +22,12 @@ The branch 1.0 is developed upon Symfony 2.1
 Documentation
 -------------
 
-[Read the Documentation](https://github.com/PUGX/PUGXI18nBundle/blob/master/Resources/doc/index.md)
+[Read the Documentation](https://github.com/PUGX/PUGXI18nBundle/blob/3.0/Resources/doc/index.md)
 
 Installation
 ------------
 
-All the installation instructions are located in [documentation](https://github.com/PUGX/PUGXI18nBundle/blob/master/Resources/doc/index.md).
+All the installation instructions are located in [documentation](https://github.com/PUGX/PUGXI18nBundle/blob/3.0/Resources/doc/index.md).
 
 License
 -------
