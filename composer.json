@@ -15,10 +15,9 @@
             "homepage": "https://github.com/PUGX/PUGXI118nBundle/contributors"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
-        "symfony/framework-bundle": "dev-master",
+        "symfony/framework-bundle": "2.4.*",
         "doctrine/orm": ">=2.2,<2.4-dev"
     },
     "require-dev": {
