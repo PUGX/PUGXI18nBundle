@@ -17,16 +17,15 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "symfony/framework-bundle": "2.4.*",
-        "doctrine/orm": ">=2.2,<2.4-dev"
+        "symfony/framework-bundle": "~2.4",
+        "doctrine/orm": "~2.2,>=2.2.3"
     },
     "require-dev": {
-        "symfony/yaml": "dev-master"
+        "symfony/yaml": "dev-master",
+        "phpunit/phpunit": "3.7.*"
     },
-
     "autoload": {
         "psr-0": { "PUGX\\I18nBundle": "" }
     },
-
     "target-dir": "PUGX/I18nBundle"
 }
