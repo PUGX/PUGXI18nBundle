@@ -66,7 +66,6 @@ class Article
 {    
     /**
      * @ORM\OneToMany(targetEntity="ArticleI18n", mappedBy="translatable", cascade={"persist"})
-     * )
      */
     protected $translations;
 
