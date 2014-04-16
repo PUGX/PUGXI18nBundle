@@ -214,9 +214,6 @@ class ArticleType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
-            ->add('translations', 'collection', array('type' => new PlayerItemI18nFormType(), 'allow_add' => true));
-
         $builder->add('translations', 'collection', array(
             'type' => new ArtcileI18nFormType(),
             'allow_add' => true,
