@@ -13,7 +13,7 @@ class PUGXI18nExtensionTest extends \PHPUnit_Framework_TestCase
         $loader = new PUGXI18nExtension();
         $config = $this->getConfig();
         $loader->load(array($config), new ContainerBuilder());
-    }    
+    }
     
     /**
      * getEmptyConfig

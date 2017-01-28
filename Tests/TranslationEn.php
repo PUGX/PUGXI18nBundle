@@ -4,7 +4,7 @@ namespace PUGX\I18nBundle\Tests;
 
 class TranslationEn extends AbstractTranslation
 {
-    public function getName() 
+    public function getName()
     {
         return "name";
     }
@@ -14,5 +14,7 @@ class TranslationEn extends AbstractTranslation
         return "en";
     }
     
-    private function getSurname() {}
+    private function getSurname()
+    {
+    }
 }

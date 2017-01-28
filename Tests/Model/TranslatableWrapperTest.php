@@ -9,9 +9,9 @@ class TranslatableWrapperTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->translationStubEn  = new TranslationEn();        
+        $this->translationStubEn  = new TranslationEn();
         $this->locale             = $this->getMockBuilder('PUGX\I18nBundle\Locale\LocaleInterface')->disableOriginalConstructor()->getMock();
-        $translationsObject       = array($this->translationStubEn);        
+        $translationsObject       = array($this->translationStubEn);
         
         $this->translatable = new TranslatableWrapper();
         $this->translatable->setLocale($this->locale);

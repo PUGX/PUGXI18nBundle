@@ -22,9 +22,9 @@ class LocaleListenerTest extends \PHPUnit_Framework_TestCase
     public function testOnKernelRequest()
     {
         $this->event->expects($this->once())->method('getRequest')
-                ->will($this->returnValue($this->request));     
+                ->will($this->returnValue($this->request));
         $this->request->expects($this->once())->method('getLocale')
-                ->will($this->returnValue('en'));     
+                ->will($this->returnValue('en'));
         $this->locale->expects($this->once())->method('setLocale')
                 ->with('en');
         

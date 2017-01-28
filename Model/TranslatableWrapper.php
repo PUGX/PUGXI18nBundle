@@ -3,12 +3,12 @@
 namespace PUGX\I18nBundle\Model;
 
 abstract class TranslatableWrapper extends Translatable
-{    
+{
     public function __get($method)
     {
         $translation = $this->getTranslation();
         $reflectedTranslation = new \ReflectionClass(get_class($translation));
-        
+
         $getters = $this->getGetters($method);
         foreach ($getters as $getter) {
             if ($reflectedTranslation->hasMethod($getter)) {
@@ -18,7 +18,7 @@ abstract class TranslatableWrapper extends Translatable
                 }
             }
         }
-        
+
         throw new \RuntimeException(sprintf('The method "%s" does not exist', $method));
     }
 
@@ -26,13 +26,13 @@ abstract class TranslatableWrapper extends Translatable
     {
         return $this->__get($method);
     }
-    
+
     protected function getGetters($method)
     {
-        $getters = array();
+        $getters = [];
         $getters[] = $method;
-        $getters[] = 'get' . ucfirst($method);
-        
+        $getters[] = 'get'.ucfirst($method);
+
         return $getters;
-    }    
+    }
 }

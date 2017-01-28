@@ -27,7 +27,7 @@ class TranslatableTest extends \PHPUnit_Framework_TestCase
           array(array('it' => 'translationStubIt', 'en' => 'translationStubEn'), 'en', 'en', 'translationStubEn'), //testGetTranslationLocaleEqualDefault
           array(array('en' => 'translationStubEn', 'it' => 'translationStubIt'), 'en', 'it', 'translationStubIt'), //testGetTranslationLocaleEqualIt
           array(array('en' => 'translationStubEn'), 'en', 'it', 'translationStubEn'), //testGetTranslationDefaultLocaleLessLocaleSettedReturnDefault
-        );   
+        );
     }
     
     /**

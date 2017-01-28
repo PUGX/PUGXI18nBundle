@@ -2,13 +2,11 @@
 
 namespace PUGX\I18nBundle\Model;
 
-use PUGX\I18nBundle\Model\TranslatableInterface;
-
 interface TranslatingInterface
 {
-    function setLocale($string);
-    
-    function getLocale();
-    
-    function setTranslatable(TranslatableInterface $translatable);
+    public function setLocale($string);
+
+    public function getLocale();
+
+    public function setTranslatable(TranslatableInterface $translatable);
 }

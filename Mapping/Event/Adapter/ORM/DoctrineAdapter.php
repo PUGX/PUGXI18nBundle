@@ -2,14 +2,14 @@
 
 namespace PUGX\I18nBundle\Mapping\Event\Adapter\ORM;
 
-use PUGX\I18nBundle\Mapping\Event\Adapter\EventAdapterInterface;
 use Doctrine\Common\EventArgs;
 use Doctrine\ORM\Proxy\Proxy;
+use PUGX\I18nBundle\Mapping\Event\Adapter\EventAdapterInterface;
 
 class DoctrineAdapter implements EventAdapterInterface
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getObject(EventArgs $e)
     {
@@ -17,7 +17,7 @@ class DoctrineAdapter implements EventAdapterInterface
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getReflectionClass($obj)
     {

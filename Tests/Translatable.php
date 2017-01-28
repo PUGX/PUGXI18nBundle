@@ -42,6 +42,5 @@ class Translatable extends BaseTranslatable
 
     public function getDummyValue()
     {
-
     }
 }

@@ -14,20 +14,20 @@ class EntityListenerTest extends \PHPUnit_Framework_TestCase
         $this->locale   = $this->getMockBuilder('PUGX\I18nBundle\Locale\LocaleInterface')
                 ->disableOriginalConstructor()->getMock();
         $this->args     = $this->getMockBuilder('Doctrine\Common\EventArgs')
-                ->disableOriginalConstructor()->getMock();                
+                ->disableOriginalConstructor()->getMock();
         $this->entity   = $this->getMockBuilder('PUGX\I18nBundle\Model\TranslatableInterface')
-                ->disableOriginalConstructor()->getMock();       
+                ->disableOriginalConstructor()->getMock();
         $this->dummy    = $this->getMockBuilder('Dummy')
-                ->disableOriginalConstructor()->getMock();       
+                ->disableOriginalConstructor()->getMock();
         
         $this->listener = new TranslatableListener($this->adapter, $this->locale);
     }
     
     public function testPostLoad()
-    {        
+    {
         $this->adapter->expects($this->once())->method('getObject')
                 ->with($this->args)
-                ->will($this->returnValue($this->entity));        
+                ->will($this->returnValue($this->entity));
         $this->entity->expects($this->once())->method('setLocale')
                 ->with($this->locale);
         
@@ -35,10 +35,10 @@ class EntityListenerTest extends \PHPUnit_Framework_TestCase
     }
     
     public function testPostLoadInterfaceNotCorrect()
-    {        
+    {
         $this->adapter->expects($this->once())->method('getObject')
                 ->with($this->args)
-                ->will($this->returnValue($this->dummy));        
+                ->will($this->returnValue($this->dummy));
         $this->entity->expects($this->never())
                 ->method('setLocale');
         
