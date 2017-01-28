@@ -2,13 +2,13 @@
     "name": "pugx/i18n-bundle",
     "type": "symfony-bundle",
     "description": "Manage i18n",
-    "keywords": ["symfony2 i18n translation"],
+    "keywords": ["symfony", "i18n", "translation"],
     "homepage": "https://github.com/PUGX",
     "license": "MIT",
     "authors": [
         {
-            "name":"Leonardo Proietti",
-            "email":"leonardo.proietti@gmail.com"
+            "name": "Leonardo Proietti",
+            "email": "leonardo.proietti@gmail.com"
         },
         {
             "name": "Community",
@@ -17,15 +17,14 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "symfony/framework-bundle": "~2.4",
-        "doctrine/orm": "~2.2,>=2.2.3"
+        "symfony/framework-bundle": "^2.3|^3.0",
+        "doctrine/orm": "^2.3"
     },
     "require-dev": {
-        "symfony/yaml": "dev-master",
-        "phpunit/phpunit": "3.7.*"
+        "symfony/yaml": "^2.3|^3.0",
+        "phpunit/phpunit": "4.*|5.*"
     },
     "autoload": {
-        "psr-0": { "PUGX\\I18nBundle": "" }
-    },
-    "target-dir": "PUGX/I18nBundle"
+        "psr-4": { "PUGX\\I18nBundle\\": "" }
+    }
 }
