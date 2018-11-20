@@ -3,7 +3,7 @@ services:
     class:     PUGX\I18nBundle\Mapping\Event\Adapter\ORM\DoctrineAdapter
   pugx.i18n.locale:
       class:     PUGX\I18nBundle\Locale\Locale
-      arguments: [%locale%]    
+      arguments: ['%locale%']    
   pugx.i18n.locale_listener:
       class:     PUGX\I18nBundle\Listener\LocaleListener
       arguments: ["@pugx.i18n.locale"]

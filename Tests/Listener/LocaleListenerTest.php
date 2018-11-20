@@ -5,9 +5,9 @@ namespace PUGX\I18nBundle\Tests\Listener;
 use PUGX\I18nBundle\Listener\LocaleListener;
 use PUGX\I18nBundle\Locale\Locale;
 
-class LocaleListenerTest extends \PHPUnit_Framework_TestCase
+class LocaleListenerTest extends \PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    protected function setUp()
     {
         $this->event = $this->getMockBuilder('Symfony\Component\HttpKernel\Event\GetResponseEvent')
                 ->disableOriginalConstructor()->getMock();

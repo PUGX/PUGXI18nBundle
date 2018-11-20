@@ -6,7 +6,7 @@ use PUGX\I18nBundle\Mapping\Event\Adapter\ORM\DoctrineAdapter;
 use PUGX\I18nBundle\Tests\Translatable;
 use PUGX\I18nBundle\Tests\TranslatableProxy;
 
-class DoctrineAdapterTest extends \PHPUnit_Framework_TestCase
+class DoctrineAdapterTest extends \PHPUnit\Framework\TestCase
 {
     public function testGetObject()
     {

@@ -2,10 +2,9 @@
 
 namespace PUGX\I18nBundle\Tests\DependencyInjection;
 
-use Symfony\Component\Config\Definition\ConfigurationInterface;
 use PUGX\I18nBundle\DependencyInjection\Configuration;
 
-class ConfigurationTest extends \PHPUnit_Framework_TestCase
+class ConfigurationTest extends \PHPUnit\Framework\TestCase
 {
     public function testThatCanGetConfigTreeBuilder()
     {

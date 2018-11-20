@@ -4,12 +4,12 @@ namespace PUGX\I18nBundle\Tests\Service;
 
 use PUGX\I18nBundle\Tests\Translatable;
 
-class TranslatableTest extends \PHPUnit_Framework_TestCase
+class TranslatableTest extends \PHPUnit\Framework\TestCase
 {
     protected $translationStubEn;
     protected $translationStubIt;
     
-    public function setUp()
+    protected function setUp()
     {
         $this->translationStubEn  = $this->getMockBuilder('PUGX\I18nBundle\Tests\TranslationEn')->disableOriginalConstructor()->getMock();
         $this->translationStubIt  = $this->getMockBuilder('PUGX\I18nBundle\Tests\TranslationIt')->disableOriginalConstructor()->getMock();

@@ -6,7 +6,7 @@ use PUGX\I18nBundle\DependencyInjection\PUGXI18nExtension;
 use Symfony\Component\Yaml\Parser;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class PUGXI18nExtensionTest extends \PHPUnit_Framework_TestCase
+class PUGXI18nExtensionTest extends \PHPUnit\Framework\TestCase
 {
     public function testLoad()
     {

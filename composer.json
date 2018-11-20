@@ -18,19 +18,20 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": ">=7.0",
-        "symfony/framework-bundle": "dev-master",
-        "doctrine/orm": "^2.3"
+        "php": "^7.0",
+        "doctrine/orm": "^2.3",
+        "symfony/framework-bundle": "dev-master"
     },
     "require-dev": {
-        "symfony/yaml": "dev-master",
         "friendsofphp/php-cs-fixer": "^2.0",
-        "phpunit/phpunit": "^5.7"
+        "phpunit/phpunit": "^5.7 || ^6.0 || ^7.0",
+        "symfony/yaml": "dev-master"
     },
     "autoload": {
         "psr-4": { "PUGX\\I18nBundle\\": "" }
     },
     "config": {
-        "bin-dir": "bin"
+        "bin-dir": "bin",
+        "sort-packages": true
     }
 }

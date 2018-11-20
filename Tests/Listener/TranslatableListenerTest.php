@@ -5,9 +5,9 @@ namespace PUGX\I18nBundle\Tests\Listener;
 use PUGX\I18nBundle\Listener\TranslatableListener;
 use PUGX\I18nBundle\Locale\Locale;
 
-class EntityListenerTest extends \PHPUnit_Framework_TestCase
+class EntityListenerTest extends \PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    protected function setUp()
     {
         $this->adapter  = $this->getMockBuilder('PUGX\I18nBundle\Mapping\Event\Adapter\EventAdapterInterface')
                 ->disableOriginalConstructor()->getMock();

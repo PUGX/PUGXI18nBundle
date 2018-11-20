@@ -5,9 +5,9 @@ namespace PUGX\I18nBundle\Tests\Service;
 use PUGX\I18nBundle\Tests\TranslatableWrapper;
 use PUGX\I18nBundle\Tests\TranslationEn;
 
-class TranslatableWrapperTest extends \PHPUnit_Framework_TestCase
+class TranslatableWrapperTest extends \PHPUnit\Framework\TestCase
 {
-    public function setUp()
+    protected function setUp()
     {
         $this->translationStubEn  = new TranslationEn();
         $this->locale             = $this->getMockBuilder('PUGX\I18nBundle\Locale\LocaleInterface')->disableOriginalConstructor()->getMock();
