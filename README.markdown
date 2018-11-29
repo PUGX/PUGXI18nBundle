@@ -1,7 +1,7 @@
 PUGXI18nBundle
 =============
 
-PUGXI18nBundle is a simple way to manage the internationalization in Symfony 2 and 3 as in symfony1 with a Entity (that implements TranslatableInterface) and EntityI18n (that implements TranslatingInterface) 
+PUGXI18nBundle is a simple way to manage the internationalization in Symfony 3+  as in symfony1 with a Entity (that implements TranslatableInterface) and EntityI18n (that implements TranslatingInterface) 
 via one-to-many association.
 
 In practice when you design the entity that implements TranslatableInterface, you can extend the class TranslatableWrapper or the class Translatable.
@@ -11,9 +11,9 @@ The Translatable's function is retrieve the translation for the current locale.
 The TranslatableWrapper's function is to wrap the methods of the related entity (TranslatingInterface) using a "magic call".
 If you want "kill the magic", you have to extend Translatable and implement these wrappers by yourself.
 
-The master branch is in sync with Symfony master branch
+This branch requires Symfony 3.4 or higher
 
-[![Build Status](https://secure.travis-ci.org/PUGX/PUGXI18nBundle.png?branch=master)](http://travis-ci.org/PUGX/PUGXI18nBundle)
+[![Build Status](https://secure.travis-ci.org/PUGX/PUGXI18nBundle.png?branch=4.1)](http://travis-ci.org/PUGX/PUGXI18nBundle)
 [![Total Downloads](https://poser.pugx.org/PUGX/i18n-bundle/downloads.png)](https://packagist.org/packages/PUGX/i18n-bundle)
 [![Latest Stable Version](https://poser.pugx.org/PUGX/i18n-bundle/v/stable.png)](https://packagist.org/packages/PUGX/i18n-bundle)
 [![Latest Stable Version](https://poser.pugx.org/PUGX/i18n-bundle/v/unstable.png)](https://packagist.org/packages/PUGX/i18n-bundle)
@@ -21,12 +21,12 @@ The master branch is in sync with Symfony master branch
 Documentation
 -------------
 
-[Read the Documentation](https://github.com/PUGX/PUGXI18nBundle/blob/master/Resources/doc/index.md)
+[Read the Documentation](https://github.com/PUGX/PUGXI18nBundle/blob/4.1/Resources/doc/index.md)
 
 Installation
 ------------
 
-All the installation instructions are located in [documentation](https://github.com/PUGX/PUGXI18nBundle/blob/master/Resources/doc/index.md).
+All the installation instructions are located in [documentation](https://github.com/PUGX/PUGXI18nBundle/blob/4.1/Resources/doc/index.md).
 
 License
 -------

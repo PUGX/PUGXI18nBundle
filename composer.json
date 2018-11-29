@@ -15,17 +15,15 @@
             "homepage": "https://github.com/PUGX/PUGXI118nBundle/contributors"
         }
     ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
-        "php": "^7.0",
-        "doctrine/orm": "^2.3",
-        "symfony/framework-bundle": "dev-master"
+        "php": "^7.1",
+        "doctrine/orm": "^2.6",
+        "symfony/framework-bundle": "3.4 || 4.1"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.0",
-        "phpunit/phpunit": "^5.7 || ^6.0 || ^7.0",
-        "symfony/yaml": "dev-master"
+        "friendsofphp/php-cs-fixer": "^2.13",
+        "phpunit/phpunit": "^6.0 || ^7.0",
+        "symfony/yaml": "3.4 || 4.1"
     },
     "autoload": {
         "psr-4": { "PUGX\\I18nBundle\\": "" }
