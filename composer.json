@@ -18,13 +18,13 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "^7.0",
-        "doctrine/orm": "^2.3",
+        "php": "^7.2",
+        "doctrine/orm": "^2.6",
         "symfony/framework-bundle": "dev-master"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.0",
-        "phpunit/phpunit": "^5.7 || ^6.0 || ^7.0",
+        "friendsofphp/php-cs-fixer": "^2.13",
+        "phpunit/phpunit": "^6.0 || ^7.0",
         "symfony/yaml": "dev-master"
     },
     "autoload": {
@@ -33,5 +33,10 @@
     "config": {
         "bin-dir": "bin",
         "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "4.2.x-dev"
+        }
     }
 }

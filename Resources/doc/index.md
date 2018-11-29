@@ -23,7 +23,7 @@ Add the following lines in your composer.json:
 ```
 {
     "require": {
-        "pugx/i18n-bundle": "dev-master"
+        "pugx/i18n-bundle": "^4.2@dev"
     }
 }
 
@@ -32,7 +32,7 @@ Add the following lines in your composer.json:
 Now, run the composer to download the bundle:
 
 ``` bash
-$ php composer.phar update pugx/i18n-bundle
+$ composer update pugx/i18n-bundle
 ```
 
 ### 2. Enable the bundle

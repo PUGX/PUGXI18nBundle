@@ -1,7 +1,7 @@
 PUGXI18nBundle
 =============
 
-PUGXI18nBundle is a simple way to manage the internationalization in Symfony 2 and 3 as in symfony1 with a Entity (that implements TranslatableInterface) and EntityI18n (that implements TranslatingInterface) 
+PUGXI18nBundle is a simple way to manage the internationalization in Symfony 4+  as in symfony1 with a Entity (that implements TranslatableInterface) and EntityI18n (that implements TranslatingInterface) 
 via one-to-many association.
 
 In practice when you design the entity that implements TranslatableInterface, you can extend the class TranslatableWrapper or the class Translatable.
